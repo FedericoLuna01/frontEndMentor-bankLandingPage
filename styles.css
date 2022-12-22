@@ -1,0 +1,393 @@
+:root {
+    --p-darkBlue: hsl(233, 26%, 24%);
+    --p-limeGreen: hsl(136, 65%, 51%);
+    --p-brightCyan: hsl(192, 70%, 51%);
+    --n-grayishBlue: hsl(233, 8%, 62%);
+    --n-lightGrayishBlue: hsl(220, 16%, 96%);
+    --n-veryLightGray: hsl(0, 0%, 98%);
+    --n-white: hsl(0, 0%, 100%);
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    flex-flow: column nowrap;
+}
+
+h1, h2, h3 {
+    color: var(--p-darkBlue);
+}
+
+/* RESETS */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 300;
+    scroll-behavior: smooth ;
+}
+
+a {
+    text-decoration: none;
+
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Public Sans', sans-serif;
+    font-size: 18px;
+}
+
+p {
+    color: var(--n-grayishBlue);
+}
+
+.button {
+    border-radius: 50px;
+    border: none;
+    background: linear-gradient(90deg, var(--p-limeGreen) 0%, var(--p-brightCyan) 100%);
+}
+
+/* NAV */
+
+.header--active {
+    position: sticky;
+    top: 0;
+    background-color: var(--n-white);
+}
+
+.nav {
+    display: flex;
+    align-items: center;    
+    justify-content: space-between;
+    height: 80px;
+    margin: 0 2em;
+    z-index: 10;
+}
+
+.nav__button {
+    display: none;
+}
+
+.opacity {
+    position: fixed;
+    background-color: rgb(0, 0, 0);
+    padding: 10px;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: .5;
+    transition: all 1s ease-in-out;
+}
+
+.opacity--active {
+    top: 80px;
+
+}
+
+.nav__list {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 2em;
+    position: fixed;
+    background-color: var(--n-white);
+    width: 90%;
+    top: -100%;
+    left: 5%;
+    text-align: center;
+    padding: 2em;
+    border-radius: 5px;
+    transition: all 1s ease-in-out;
+
+}
+
+.nav__list--active {
+    top: 100px;
+}
+
+.nav__a {
+    color: var(--p-darkBlue);
+    font-weight: 500;
+}
+
+.nav__hamburger {
+    src: url(/images/icon-hamburger.svg);
+    cursor: pointer;
+}
+
+
+/* HOME */
+
+.home__pic {
+    background: url(/images/bg-intro-mobile.svg);
+    height: 10%;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.home__mobiles {
+    width: 100%;
+}
+
+.home__text {
+    text-align: center;
+    max-width: 18em;
+    padding: 3em 0;
+}
+
+.home__p {
+    color: var(--n-grayishBlue);
+    font-size: 80%;
+    margin: 1.5em 0;
+}
+
+.home__button {
+    padding: auto;
+}
+
+.home__a {
+    color: var(--n-white);
+    font-weight: 700;
+    padding: 1em 2em;
+
+}
+
+/* WHY */
+
+.why {
+    text-align: center;
+    background-color: var(--n-lightGrayishBlue);
+    padding: 3em 0;
+
+}
+
+.why__h1 {
+    max-width: 18em;
+
+}
+
+.why__p {
+    max-width: 18em;
+    padding: 1.5em 0;
+}
+
+.why__card {
+    margin: 1em 0;
+    max-width: 18em;
+    font-size: 90%;
+}
+
+/* ARTICLES */
+
+.articles {
+    padding: 3em 0;
+    font-size: 90%;
+    background-color: var(--n-veryLightGray);
+}
+
+.articles__h1 {
+    text-align: center;
+
+}
+
+.article__card {
+    text-align: left;
+    display: flex;
+    flex-flow: column nowrap;
+    width: 20em;
+    background-color: var(--n-white);
+    border-radius: 5px;
+    margin: 1em;
+}
+
+.article__img {
+    width: 100%;
+    border-radius: 5px 5px 0 0;
+}
+
+.article__text {
+    padding: 2em;
+    font-size: 90%;
+}
+
+.article__h3 {
+    margin: .5em 0;
+}
+
+/* FOOTER */
+
+.footer {
+    background-color: var(--p-darkBlue);
+    gap: 2em;
+    padding: 2em;
+    font-size: 90%;
+}
+
+.social {
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 1em;
+}
+
+.social__img {
+    width: 1.5em;
+}
+
+.info {
+    gap: 1em;
+}
+
+.info__item {
+    color: var(--n-white);
+}
+
+.invite__a {
+    font-weight: 700;
+    color: var(--n-white);
+    padding: 1em 2.5em;
+
+}
+
+@media (min-width: 786px) {
+    .button:hover {
+       opacity: .8;
+    }
+
+    .nav__hamburger {
+        display: none;
+    }
+
+    .nav__list {
+        top: 0;
+        flex-flow: row nowrap;
+        position: relative;
+        width: auto;
+        height: 80px;
+        left: 0;
+        padding: 0;
+        align-items: center;
+    }
+
+    .nav__item:hover {
+        border-bottom: 2px solid var(--p-limeGreen);
+    }
+
+    .nav__button {
+        display: block;
+        background: transparent;
+    }
+
+    .button__a {
+        color: var(--n-white);
+        padding: 1em 2em;
+    }
+
+    /* HOME */
+    .home {
+        justify-content: space-between;
+        flex-direction: row-reverse;
+
+    }
+
+    .home__pic {
+        background-image: url(/images/bg-intro-desktop.svg);
+        background-position: left;
+        width: cover;
+    }
+
+    .home__text {
+        font-size: 130%;
+        width: 80%;
+        text-align: left;
+        margin-left: 10%;
+        align-items: flex-start;
+    }
+
+    .home__button {
+        background: transparent;
+
+    }
+    /* WHY */
+    .why {
+        align-items: flex-start;
+        text-align: left;
+        padding: 10%;
+    }
+    
+    .why__intro {
+        width: 60em;
+        padding: 0;
+        align-items: flex-start;
+    }
+
+    .why__h1, .why__p {
+        max-width: 60%;
+    }
+
+    .why-card__container {
+        display: flex;
+        flex-flow: row wrap;
+        width: 100%;
+        gap: 1em;
+        justify-content: space-between;
+    }
+
+    .why__card {
+        max-width: 15em;
+        margin: 0;
+    }
+
+    .why__img {
+        margin: 1em 0;
+    }
+
+    .why__card .why__p {
+        max-width: 100%;
+    }
+
+    /* ARTICLES */
+    .articles {
+        align-items: flex-start;
+        padding: 10%;
+
+    }
+
+    .articles__h1 {
+        margin: 1em 0;
+    }
+
+    .articles-card__container {
+        display: flex;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        gap: 1em;
+    }
+
+    .article__card {
+        width: 30%;
+    }
+
+    .article__img {
+        height: 100%;
+    }
+
+    /* FOOTER */
+    .footer {
+        justify-content: space-between;
+        flex-flow: row wrap;
+        gap: 3em;
+        padding: 3em 10%;
+    }
+
+    .invite__button {
+        background: transparent;
+
+    }
+
+}
